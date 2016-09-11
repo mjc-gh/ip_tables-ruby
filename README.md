@@ -1,6 +1,6 @@
 # IpTables
 
-Simple DSL for writing and building IP tables rule sets.
+Simple DSL for writing and building IP tables rule sets. This gem is unfinished and is still a work in progres...
 
 ## Example
 
