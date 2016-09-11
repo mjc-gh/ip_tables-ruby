@@ -1,24 +1,22 @@
 # IpTables
 
-TODO: Write a gem description
+Simple DSL for writing and building IP tables rule sets.
 
-## Installation
+## Example
 
-Add this line to your application's Gemfile:
+Here's a quick example of the DSL:
 
-    gem 'ip_tables'
+```ruby
+chain :in, default: :drop do
+  accept src: '192.168.1.0/24', dst: :any do
+    match :tcp, dport: [22, 80, 443]
+    match :udp, dport: 53
+  end
+end
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install ip_tables
-
-## Usage
-
-TODO: Write usage instructions here
+chain :out, default: :accept
+chain :forward, default: :drop
+```
 
 ## Contributing
 
